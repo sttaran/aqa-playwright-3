@@ -1,10 +1,15 @@
 // @ts-check
 import {test, expect} from "@playwright/test";
 
-test.describe("Auth", ()=>{
+test.describe.skip("Auth", ()=>{
   test.describe("Login", ()=>{
 
-    test.beforeAll(async ()=>{
+    test.beforeAll(async ({browser, context})=>{
+      // const ctx = await browser.newContext()
+      // const page = await ctx.newPage()
+      const page = context.newPage()
+
+      await page.close()
       console.log("BEFORE ALL")
     })
 
@@ -31,7 +36,7 @@ test.describe("Auth", ()=>{
 })
 
 
-test.describe.only("TODO MVC", ()=>{
+test.describe("TODO MVC", ()=>{
   test.describe("TODO Create", ()=>{
 
     test.beforeEach(async ({page})=>{

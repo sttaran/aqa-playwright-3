@@ -11,7 +11,9 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 const config = defineConfig({
-  testDir: './tests',
+  // testDir: './tests',
+  // testMatch: '/tests/**/*.spec.js',
+  testMatch: /tests\/.*\/*.spec.js/,
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -24,7 +26,7 @@ const config = defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: true,
+    headless: false,
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://qauto.forstudy.space/',
     httpCredentials: {
