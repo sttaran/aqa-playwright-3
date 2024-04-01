@@ -38,7 +38,7 @@ test.describe("Assertions", ()=>{
         await expect(emailInput).toHaveValue(inputEmailString)
     })
 
-    test.only("screenshots", async ({page})=>{
+    test("screenshots", async ({page})=>{
         const inputEmailString ="test@test.com"
 
         const signInBtn = page.locator('button', {hasText: 'Sign In'})
