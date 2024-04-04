@@ -8,6 +8,10 @@ export default class BasePage {
         this.header = new Header(page)
     }
 
+    get page (){
+        return this._page
+    }
+
     async navigate(){
         await this._page.goto(this._url)
     }
