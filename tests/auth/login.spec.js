@@ -10,7 +10,7 @@ test.describe("Auth", ()=>{
                 await page.goto('')
             })
 
-            test("user should be able to login", async ({page})=>{
+            test("@smoke @regression user should be able to login", async ({page})=>{
                 const signInBtn = page.locator('button', {hasText: 'Sign In'})
                 await signInBtn.click()
 
@@ -32,7 +32,7 @@ test.describe("Auth", ()=>{
                 await page.goto('')
             })
 
-            test("validation for empty email", async ({page})=>{
+            test("@smoke validation for empty email", async ({page})=>{
                 const signInBtn = page.locator('button', {hasText: 'Sign In'})
                 await signInBtn.click()
 
@@ -74,8 +74,8 @@ test.describe("Auth", ()=>{
     })
 })
 
-test.describe.only("Auth (POM)", ()=>{
-    test.describe.only("Login", ()=>{
+test.describe("Auth (POM)", ()=>{
+    test.describe("Login", ()=>{
         let popup
 
         test.describe("Positive scenarios", ()=>{
