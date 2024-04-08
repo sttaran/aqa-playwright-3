@@ -16,6 +16,10 @@
     "@types/node": "^20.11.30"
   },
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "@zealteam/testrail-reporter": "^1.0.5",
+    "dotenv": "^16.4.5",
+    "json-stringify-safe": "^5.0.1",
+    "playwright-html": "^1.2.5",
+    "playwright-testrail-reporter": "^1.2.0"
   }
 }

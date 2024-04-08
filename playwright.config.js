@@ -25,16 +25,31 @@ const config = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: 3,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+      [
+          'html', {open: process.env.CI ? 'never' : 'on-failure'}
+      ],
+      ["playwright-testrail-reporter"]
+      // [
+      //   'playwright-html'
+      // ]
+      // [
+      //     'json', { outputFile: 'report.json'}
+      // ],
+      // [
+      //   'junit', { outputFile: 'report.xml'}
+      // ]
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: false,
+    headless: true,
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: testsConfig.baseUrl,
     httpCredentials: testsConfig.httpCredentials,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on',
-    screenshot: 'on'
+    trace: 'retain-on-failure',
+    screenshot: 'only-on-failure',
+    video: 'on',
   },
 
   /* Configure projects for major browsers */

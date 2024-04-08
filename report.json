@@ -1,0 +1,184 @@
+{
+  "config": {
+    "configFile": "/home/staran/Documents/school/aqa-playwright-3/playwright.config.js",
+    "rootDir": "/home/staran/Documents/school/aqa-playwright-3",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "report.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "report.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/staran/Documents/school/aqa-playwright-3/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/staran/Documents/school/aqa-playwright-3",
+        "testIgnore": [],
+        "testMatch": [
+          "/tests\\/.*\\/*.spec.js/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/staran/Documents/school/aqa-playwright-3/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/staran/Documents/school/aqa-playwright-3",
+        "testIgnore": [],
+        "testMatch": [
+          "/tests\\/.*\\/*.spec.js/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/staran/Documents/school/aqa-playwright-3/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/staran/Documents/school/aqa-playwright-3",
+        "testIgnore": [],
+        "testMatch": [
+          "/tests\\/.*\\/*.spec.js/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/staran/Documents/school/aqa-playwright-3/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/home/staran/Documents/school/aqa-playwright-3",
+        "testIgnore": [],
+        "testMatch": [
+          "/tests\\/.*\\/*.spec.js/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/staran/Documents/school/aqa-playwright-3/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/home/staran/Documents/school/aqa-playwright-3",
+        "testIgnore": [],
+        "testMatch": [
+          "/tests\\/.*\\/*.spec.js/"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.42.1",
+    "workers": 3,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tests/locators/actions.spec.js",
+      "file": "tests/locators/actions.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Locators",
+          "file": "tests/locators/actions.spec.js",
+          "line": 12,
+          "column": 15,
+          "specs": [
+            {
+              "title": "page.locator actions",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 0,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 4128,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-04-08T16:42:38.703Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/staran/Documents/school/aqa-playwright-3/test-results/tests-locators-actions-Locators-page-locator-actions-chromium/test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/staran/Documents/school/aqa-playwright-3/test-results/tests-locators-actions-Locators-page-locator-actions-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "17a3111f007e787b2eee-5272505c4ca797094345",
+              "file": "tests/locators/actions.spec.js",
+              "line": 17,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2024-04-08T16:42:37.504Z",
+    "duration": 5772.55,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

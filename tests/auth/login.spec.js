@@ -10,7 +10,7 @@ test.describe("Auth", ()=>{
                 await page.goto('')
             })
 
-            test("@smoke @regression user should be able to login", async ({page})=>{
+            test.only("@C1 user should be able to login", async ({page})=>{
                 const signInBtn = page.locator('button', {hasText: 'Sign In'})
                 await signInBtn.click()
 
