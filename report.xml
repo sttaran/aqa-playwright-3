@@ -1,0 +1,13 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="5.537353">
+<testsuite name="tests/locators/actions.spec.js" timestamp="2024-04-08T16:42:37.779Z" hostname="chromium" tests="1" failures="0" skipped="0" time="4.128" errors="0">
+<testcase name="Locators › page.locator actions" classname="tests/locators/actions.spec.js" time="4.128">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/tests-locators-actions-Locators-page-locator-actions-chromium/test-finished-1.png]]
+
+[[ATTACHMENT|test-results/tests-locators-actions-Locators-page-locator-actions-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

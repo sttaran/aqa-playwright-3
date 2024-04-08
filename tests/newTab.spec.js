@@ -1,7 +1,7 @@
 import {test} from "@playwright/test";
 
 
-test.only("new tab", async ({page})=>{
+test.skip("new tab", async ({page})=>{
         await page.goto('https://translate.google.com/?hl=en&tab=TT&sl=en&tl=uk&op=websites')
         await page.locator('[type="url"]').fill('https://www.google.com')
 
