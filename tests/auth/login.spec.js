@@ -10,7 +10,11 @@ test.describe("Auth", ()=>{
                 await page.goto('')
             })
 
-            test.only("@C1 user should be able to login", async ({page})=>{
+            test("@C1 user should be able to login", async ({page, browserName})=>{
+                if(browserName === "webkit"){
+                    test.skip("This test is not supported in WebKit")
+                }
+
                 const signInBtn = page.locator('button', {hasText: 'Sign In'})
                 await signInBtn.click()
 
