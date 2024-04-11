@@ -29,7 +29,7 @@ const config = defineConfig({
       [
           'html', {open: process.env.CI ? 'never' : 'on-failure'}
       ],
-      ["playwright-testrail-reporter"]
+      // ["playwright-testrail-reporter"]
       // [
       //   'playwright-html'
       // ]
@@ -42,7 +42,7 @@ const config = defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: true,
+    headless: false,
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: testsConfig.baseUrl,
     httpCredentials: testsConfig.httpCredentials,
@@ -55,10 +55,15 @@ const config = defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'setup',
+      use: { ...devices['Desktop Chrome'] },
+      testMatch: /tests\/setup\/.*\/*.setup.js/
+    },
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      dependencies: ['setup']
     },
-
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
