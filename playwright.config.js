@@ -47,7 +47,7 @@ const config = defineConfig({
     baseURL: testsConfig.baseUrl,
     httpCredentials: testsConfig.httpCredentials,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'retain-on-failure',
+    trace: 'on',
     screenshot: 'only-on-failure',
     video: 'on',
   },
@@ -60,29 +60,35 @@ const config = defineConfig({
       testMatch: /tests\/setup\/.*\/*.setup.js/
     },
     {
-      name: 'chromium',
+      name: 'chromium UI tests',
       use: { ...devices['Desktop Chrome'] },
+      testMatch: /tests\/e2e\/.*\/*.spec.js/,
       dependencies: ['setup']
     },
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'API tests',
+      testMatch: /tests\/api\/.*\/*.spec.js/,
+      use: { ...devices['Desktop Chrome'] },
     },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
-
-    /* Test against mobile viewports. */
-    {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-    {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
+    //
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
+    //
+    // /* Test against mobile viewports. */
+    // {
+    //   name: 'Mobile Chrome',
+    //   use: { ...devices['Pixel 5'] },
+    // },
+    // {
+    //   name: 'Mobile Safari',
+    //   use: { ...devices['iPhone 12'] },
+    // },
 
     /* Test against branded browsers. */
     // {

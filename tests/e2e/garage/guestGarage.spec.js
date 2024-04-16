@@ -2,8 +2,7 @@ import { test, expect} from '../../src/fixtures/guestFixtures.js'
 
 
 
-test.describe.only('Garage (fixtures)', () => {
-
+test.describe('Garage (fixtures)', () => {
     test('created car should be saved to session storage', async ({garagePage, page}) => {
         await expect(garagePage.addCarButton).toBeVisible();
 
