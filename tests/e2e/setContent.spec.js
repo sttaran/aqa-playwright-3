@@ -1,7 +1,7 @@
 import {test} from "@playwright/test";
 
 
-test.only("set content", async ({page})=>{
+test("set content", async ({page})=>{
         await page.goto('about:blank')
         // should contain list and buttons
        const htmlContent = `
