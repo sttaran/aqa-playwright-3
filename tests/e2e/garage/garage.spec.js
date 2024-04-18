@@ -1,6 +1,6 @@
-import {loggedInAsAdmin as test, expect} from '../../src/fixtures/adminFixtures.js'
-import {WelcomePage} from "../../src/pageObjects/WelcomePage/WelcomePage.js";
-import GaragePage from "../../src/pageObjects/GaragePage/GaragePage.js";
+import {loggedInAsAdmin as test, expect} from '../../../src/fixtures/adminFixtures.js'
+import {WelcomePage} from "../../../src/pageObjects/WelcomePage/WelcomePage.js";
+import GaragePage from "../../../src/pageObjects/GaragePage/GaragePage.js";
 
 
 test.describe('Garage (fixtures)', () => {

@@ -1,4 +1,4 @@
-import { test, expect} from '../../src/fixtures/userFixtures.js'
+import { test, expect} from '../../../src/fixtures/userFixtures.js'
 
 
 test.describe('Garage (network)', () => {

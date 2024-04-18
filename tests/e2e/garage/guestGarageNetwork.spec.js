@@ -1,4 +1,4 @@
-import { test, expect} from '../../src/fixtures/guestFixtures.js'
+import { test, expect} from '../../../src/fixtures/guestFixtures.js'
 import {BRANDS_MOCK_RESPONSE} from "./fixtures/brands.js";
 import {MODELS_MOCK_BY_ID} from "./fixtures/models.js";
 
