@@ -19,7 +19,7 @@ test.describe("Cars API", ()=>{
         console.log(body)
     })
 
-    test.only("get", async ({request})=>{
+    test("get", async ({request})=>{
         const res = await request.get('api/cars/models', {
             params: {
                 filter: JSON.stringify(["author", "date"])

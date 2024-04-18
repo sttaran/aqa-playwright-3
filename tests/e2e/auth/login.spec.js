@@ -1,6 +1,6 @@
 import {expect, test} from "@playwright/test";
-import {USERS} from "../../src/data/users.js";
-import {WelcomePage} from "../../src/pageObjects/WelcomePage/WelcomePage.js";
+import {USERS} from "../../../src/data/users.js";
+import {WelcomePage} from "../../../src/pageObjects/WelcomePage/WelcomePage.js";
 
 
 test.describe("Auth", ()=>{

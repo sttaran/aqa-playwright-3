@@ -1,4 +1,4 @@
-import { test, expect} from '../../src/fixtures/guestFixtures.js'
+import { test, expect} from '../../../src/fixtures/guestFixtures.js'
 
 
 
