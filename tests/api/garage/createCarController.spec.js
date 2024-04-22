@@ -3,25 +3,33 @@ import {MODELS} from "../../../src/data/models.js";
 import {BRANDS} from "../../../src/data/brands.js";
 import moment from "moment";
 import {USER_JOE_STORAGE_STATE_PATH} from "../../../src/constants.js";
+import CarController from "../../../src/controllers/CarsContoller.js";
 
 
-test.describe("Cars API", ()=>{
-    test.describe("Create", ()=>{
+test.describe.only("Cars API", ()=>{
+    test.describe("Create with Controller", ()=>{
+        let carsController
+
+        test.beforeEach(async ({request})=>{
+            carsController = new CarController(request)
+        })
+
         test.afterAll(async ()=>{
             const request = await apiRequest.newContext({
                 storageState: USER_JOE_STORAGE_STATE_PATH
             })
 
-            const carsResponse = await request.get('/api/cars')
+            carsController = new CarController(request)
+
+            const carsResponse = await carsController.getUserCars()
             const cars = await carsResponse.json()
 
             await Promise.all(
-                cars.data.map((car) => request.delete(`/api/cars/${car.id}`))
+                cars.data.map((car) => carsController.deleteCar(car.id))
             )
         })
 
-        test("create car", async ({request})=>{
-
+        test("create car", async ()=>{
             const brand = BRANDS.Audi
 
             for (const model of Object.values(MODELS[brand.id])) {
@@ -34,11 +42,9 @@ test.describe("Cars API", ()=>{
                     }
 
                     const startTime = new Date()
-                    const response = await request.post('/api/cars', {
-                        data: requestBody
-                    })
-
+                    const response = await carsController.createCar(requestBody)
                     const body = await response.json()
+
                     const expected = {
                         "id": expect.any(Number),
                         "carBrandId": requestBody.carBrandId,

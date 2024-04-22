@@ -2,6 +2,7 @@ import {expect as baseExpect, request as baseRequest, test as base} from "@playw
 import {WelcomePage} from "../pageObjects/WelcomePage/WelcomePage.js";
 import GaragePage from "../pageObjects/GaragePage/GaragePage.js";
 import {ADMIN_STORAGE_STATE_PATH, USER_JOE_STORAGE_STATE_PATH} from "../constants.js";
+import APIClient from "../client/APICLient.js";
 
 export const test = base.extend({
     welcomePage: async ({page}, use)=>{
@@ -15,6 +16,10 @@ export const test = base.extend({
         await use(req)
 
         await req.dispose()
+    },
+    apiNewUser: async ({}, use)=>{
+       const client = await APIClient.authenticateWithNewUser('')
+        await use(client)
     },
     page: async ({browser}, use)=>{
         const ctx = await browser.newContext({
