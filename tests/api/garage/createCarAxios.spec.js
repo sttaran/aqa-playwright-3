@@ -112,7 +112,6 @@ test.describe("Cars API", ()=>{
         })
 
         test("create car", async ()=>{
-
             const brand = BRANDS.Audi
 
             for (const model of Object.values(MODELS[brand.id])) {
