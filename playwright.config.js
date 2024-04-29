@@ -29,6 +29,9 @@ const config = defineConfig({
       [
           'html', {open: process.env.CI ? 'never' : 'on-failure'}
       ],
+      [
+        process.env.CI ? 'github' : 'list'
+      ]
       // ["playwright-testrail-reporter"]
       // [
       //   'playwright-html'
