@@ -18,12 +18,12 @@ jobs:
         env:
           BASE_URL: 'https://qauto.forstudy.space/'
           API_URL: 'https://api.qauto.forstudy.space/'
-          HTTP_CREDENTIALS_USERNAME: 'guest'
-          HTTP_CREDENTIALS_PASSWORD: 'welcome2qauto'
+          HTTP_CREDENTIALS_USERNAME: ${{secrets.HTTP_CREDENTIALS_USERNAME}}
+          HTTP_CREDENTIALS_PASSWORD: ${{secrets.HTTP_CREDENTIALS_PASSWORD}}
         run: |
           docker-compose up --exit-code-from pw-tests
       - name: "Upload report to artifacts"
-        if: always()
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: test-report
