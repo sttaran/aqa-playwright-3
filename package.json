@@ -23,6 +23,7 @@
     "dotenv": "^16.4.5",
     "json-stringify-safe": "^5.0.1",
     "moment": "^2.30.1",
+    "mysql2": "^3.9.7",
     "playwright-html": "^1.2.5",
     "playwright-testrail-reporter": "^1.2.0",
     "tough-cookie": "^4.1.3"
