@@ -4,8 +4,6 @@ FROM mcr.microsoft.com/playwright:v1.42.1-jammy
 # Copy project files
 COPY . /plawright-tests
 
-ENV CI=true
-
 # Set working directory
 WORKDIR /plawright-tests
 

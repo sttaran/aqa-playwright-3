@@ -6,7 +6,7 @@ import {USER_JOE_STORAGE_STATE_PATH} from "../../../src/constants.js";
 import CarController from "../../../src/controllers/CarsContoller.js";
 
 
-test.describe.only("Cars API", ()=>{
+test.describe("Cars API", ()=>{
     test.describe("Create with Controller", ()=>{
         let carsController
 
