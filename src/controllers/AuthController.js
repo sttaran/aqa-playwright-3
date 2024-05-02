@@ -6,7 +6,7 @@ export default class AuthController extends BaseController {
 
 
     async signUp(userData){
-        return this._request.post(this.#SIGN_UP_PATH, userData)
+        return this._request.post(this.#SIGN_UP_PATH, {data: userData, headers: {"Content-Type": "application/json"}})
     }
 
 
